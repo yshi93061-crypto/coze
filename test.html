@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js">
+		</script>
+		<script>
+			new CozeWebSDK.WebChatClient({
+				config: {
+					bot_id: '7563499770993131563',
+				},
+				componentProps: {
+					title: 'Coze',
+				},
+				auth: {
+					type: 'token',
+					token: 'cztei_lwHlrAbX2gViocBoPvpwBSC3iS9Y1YOZOU1OEG1lCjiD8rtWQpn9a5sfIx7pnEYFf',
+					onRefreshToken: function() {
+						return 'pat_********'
+					}
+				},
+				ui: {
+					base: {
+						icon: 'https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/obric/coze/favicon.1970.png',
+						layout: 'mobile',
+						zIndex: 1000,
+					},
+					// 悬浮球配置
+					asstBtn: {
+						isNeed: true,
+					},
+					//配置顶部标题栏
+					header: {
+						isShow: true,
+						isNeedClose: true,
+					},
+				},
+				footer: {
+					isShow: true,
+					expressionText: 'Powered by {{name}}&{{name1}}',
+					linkvars: {
+						name: {
+							text: 'A',
+							link: 'https://www.test1.com'
+						},
+						name1: {
+							text: 'B',
+							link: 'https://www.test2.com'
+						}
+					}
+				},
+				//配置聊天框
+				chatBot: {
+					title: "Kids' Playmate | Snowy",
+					uploadable: true,
+					width: 800,
+					el: undefined,
+					isNeedAddNewConversation: true,
+					isNeedQuote: true,
+					onHide: () => {
+						// todo...
+					},
+					onShow: () => {
+						// todo...
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
